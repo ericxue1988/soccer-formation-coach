@@ -101,6 +101,89 @@ const formations = {
       player("RS", "Right Striker", "9", 76, 26, { possession: [84, 25], defense: [66, 26], press: [78, 26] }),
     ],
   },
+  "4-4-2": {
+    title: "4-4-2",
+    identity: "Two banks of four with two strikers and clear wide-midfield responsibilities.",
+    phases: {
+      base: "Base Shape",
+      possession: "In Possession",
+      defense: "Out of Possession",
+      press: "Front Two Press",
+    },
+    summary:
+      "A direct, balanced structure that can protect width, play early into two forwards, and defend compactly with simple references.",
+    pros: ["Clear partnerships", "Strong wide coverage", "Two-striker counter threat", "Simple defensive distances"],
+    cons: ["Can be outnumbered centrally", "Wide midfielders work hard", "Needs compact vertical distances"],
+    evolution:
+      "Can defend as a compact 4-4-2 block, attack with wide midfielders high, or become a diamond to add central overloads.",
+    drills: [
+      "Striker pair pressing: one jumps, one screens pivot.",
+      "Wide midfielder and fullback cover/overlap rotation.",
+      "Central two staying connected against a midfield three.",
+    ],
+    variations: {
+      flat: {
+        label: "Flat midfield",
+        title: "4-4-2 Flat",
+        identity: "Two central midfielders, two wide midfielders, and two forwards in a compact classic block.",
+        summary:
+          "Best for simple defensive organization, wide coverage, and direct attacking through two strikers.",
+        players: [
+          player("GK", "Goalkeeper", "GK", 8, 34, { possession: [9, 34], defense: [7, 34], press: [9, 34] }),
+          player("LB", "Left Back", "FB", 23, 55, { possession: [33, 55], defense: [20, 55], press: [30, 56] }),
+          player("LCB", "Left Center Back", "CB", 19, 42, { possession: [21, 43], defense: [18, 42], press: [21, 43] }),
+          player("RCB", "Right Center Back", "CB", 19, 26, { possession: [21, 25], defense: [18, 26], press: [21, 25] }),
+          player("RB", "Right Back", "FB", 23, 13, { possession: [33, 13], defense: [20, 13], press: [30, 12] }),
+          player("LM", "Left Midfielder", "W", 48, 55, { possession: [65, 56], defense: [42, 55], press: [55, 56] }),
+          player("LCM", "Left Central Midfielder", "8", 46, 42, { possession: [52, 42], defense: [42, 42], press: [52, 42] }),
+          player("RCM", "Right Central Midfielder", "8", 46, 26, { possession: [52, 26], defense: [42, 26], press: [52, 26] }),
+          player("RM", "Right Midfielder", "W", 48, 13, { possession: [65, 12], defense: [42, 13], press: [55, 12] }),
+          player("LS", "Left Striker", "9", 76, 41, { possession: [84, 42], defense: [66, 41], press: [78, 41] }),
+          player("RS", "Right Striker", "9", 76, 27, { possession: [84, 26], defense: [66, 27], press: [78, 27] }),
+        ],
+      },
+      smallDiamond: {
+        label: "Small diamond",
+        title: "4-4-2 Small Diamond",
+        identity: "Narrow midfield diamond: pivot, two shuttlers, and a 10 close behind two strikers.",
+        summary:
+          "Best for central overloads, quick combinations, and protecting the middle, but it asks fullbacks to provide width.",
+        players: [
+          player("GK", "Goalkeeper", "GK", 8, 34, { possession: [9, 34], defense: [7, 34], press: [9, 34] }),
+          player("LB", "Left Back", "FB", 23, 55, { possession: [46, 57], defense: [20, 55], press: [35, 56] }),
+          player("LCB", "Left Center Back", "CB", 19, 42, { possession: [22, 43], defense: [18, 42], press: [22, 43] }),
+          player("RCB", "Right Center Back", "CB", 19, 26, { possession: [22, 25], defense: [18, 26], press: [22, 25] }),
+          player("RB", "Right Back", "FB", 23, 13, { possession: [46, 11], defense: [20, 13], press: [35, 12] }),
+          player("DM", "Defensive Midfielder", "6", 39, 34, { possession: [42, 34], defense: [36, 34], press: [46, 34] }),
+          player("LCM", "Left Shuttler", "8", 51, 43, { possession: [56, 43], defense: [45, 43], press: [56, 43] }),
+          player("RCM", "Right Shuttler", "8", 51, 25, { possession: [56, 25], defense: [45, 25], press: [56, 25] }),
+          player("AM", "Attacking Midfielder", "10", 62, 34, { possession: [70, 34], defense: [55, 34], press: [64, 34] }),
+          player("LS", "Left Striker", "9", 78, 41, { possession: [85, 42], defense: [67, 41], press: [79, 41] }),
+          player("RS", "Right Striker", "9", 78, 27, { possession: [85, 26], defense: [67, 27], press: [79, 27] }),
+        ],
+      },
+      wideDiamond: {
+        label: "Wide diamond",
+        title: "4-4-2 Wide Diamond",
+        identity: "A looser diamond where shuttlers stretch into half-wide lanes and the 10 connects to both forwards.",
+        summary:
+          "Best for mixing central combinations with wider outlets while keeping the two-striker threat.",
+        players: [
+          player("GK", "Goalkeeper", "GK", 8, 34, { possession: [9, 34], defense: [7, 34], press: [9, 34] }),
+          player("LB", "Left Back", "FB", 23, 55, { possession: [38, 56], defense: [20, 55], press: [33, 56] }),
+          player("LCB", "Left Center Back", "CB", 19, 42, { possession: [21, 43], defense: [18, 42], press: [21, 43] }),
+          player("RCB", "Right Center Back", "CB", 19, 26, { possession: [21, 25], defense: [18, 26], press: [21, 25] }),
+          player("RB", "Right Back", "FB", 23, 13, { possession: [38, 12], defense: [20, 13], press: [33, 12] }),
+          player("DM", "Defensive Midfielder", "6", 39, 34, { possession: [42, 34], defense: [36, 34], press: [46, 34] }),
+          player("LM", "Left Shuttler", "8", 54, 51, { possession: [63, 52], defense: [45, 51], press: [58, 51] }),
+          player("RM", "Right Shuttler", "8", 54, 17, { possession: [63, 16], defense: [45, 17], press: [58, 17] }),
+          player("AM", "Attacking Midfielder", "10", 64, 34, { possession: [72, 34], defense: [56, 34], press: [66, 34] }),
+          player("LS", "Left Striker", "9", 79, 42, { possession: [86, 43], defense: [67, 42], press: [80, 42] }),
+          player("RS", "Right Striker", "9", 79, 26, { possession: [86, 25], defense: [67, 26], press: [80, 26] }),
+        ],
+      },
+    },
+  },
 };
 
 const roleLibrary = {
@@ -170,6 +253,7 @@ const roleLibrary = {
 };
 
 let activeFormation = "4-3-3";
+let activeVariation = "default";
 let activePhase = "base";
 let activeSituation = "middle";
 let activeTab = "overview";
@@ -190,6 +274,7 @@ let compactnessLevel = 0.62;
 
 const pitch = document.querySelector("#pitch");
 const formationSelect = document.querySelector("#formationSelect");
+const variationSelect = document.querySelector("#variationSelect");
 const phaseSelect = document.querySelector("#phaseSelect");
 const situationSelect = document.querySelector("#situationSelect");
 const playersGroup = document.querySelector("#players");
@@ -214,6 +299,27 @@ function player(id, name, role, x, y, phases) {
   return { id, name, role, x, y, phases };
 }
 
+function getDefaultVariationKey(formationKey) {
+  const keys = Object.keys(formations[formationKey].variations || {});
+  return keys[0] || "default";
+}
+
+function getFormation() {
+  const base = formations[activeFormation];
+  const variation = base.variations?.[activeVariation];
+  if (!variation) return base;
+  return {
+    ...base,
+    ...variation,
+    phases: variation.phases || base.phases,
+    pros: variation.pros || base.pros,
+    cons: variation.cons || base.cons,
+    evolution: variation.evolution || base.evolution,
+    drills: variation.drills || base.drills,
+    variationLabel: variation.label,
+  };
+}
+
 function getPlayerCircleLabel(item) {
   return item.id.length > 3 ? item.role : item.id;
 }
@@ -231,6 +337,7 @@ function setup() {
     situationSelect.add(new Option(item.label, key));
   });
   formationSelect.value = activeFormation;
+  updateVariationOptions();
   situationSelect.value = activeSituation;
   updatePhaseOptions();
   resetLivePositions();
@@ -241,9 +348,22 @@ function setup() {
 function bindEvents() {
   formationSelect.addEventListener("change", () => {
     activeFormation = formationSelect.value;
+    activeVariation = getDefaultVariationKey(activeFormation);
     activePhase = "base";
-    selectedId = formations[activeFormation].players[5]?.id ?? formations[activeFormation].players[0].id;
+    selectedId = getFormation().players[5]?.id ?? getFormation().players[0].id;
+    ballOwner = { team: "home", id: selectedId };
     drawings = [];
+    updateVariationOptions();
+    updatePhaseOptions();
+    resetLivePositions();
+    render();
+  });
+
+  variationSelect.addEventListener("change", () => {
+    activeVariation = variationSelect.value;
+    activePhase = "base";
+    selectedId = getFormation().players[5]?.id ?? getFormation().players[0].id;
+    ballOwner = { team: "home", id: selectedId };
     updatePhaseOptions();
     resetLivePositions();
     render();
@@ -305,16 +425,33 @@ function bindEvents() {
 
 function updatePhaseOptions() {
   phaseSelect.innerHTML = "";
-  Object.entries(formations[activeFormation].phases).forEach(([value, label]) => {
+  Object.entries(getFormation().phases).forEach(([value, label]) => {
     phaseSelect.add(new Option(label, value));
   });
   phaseSelect.value = activePhase;
 }
 
+function updateVariationOptions() {
+  variationSelect.innerHTML = "";
+  const variations = formations[activeFormation].variations;
+  if (!variations) {
+    variationSelect.add(new Option("Standard", "default"));
+    activeVariation = "default";
+    variationSelect.disabled = true;
+    return;
+  }
+  Object.entries(variations).forEach(([value, item]) => {
+    variationSelect.add(new Option(item.label, value));
+  });
+  variationSelect.disabled = false;
+  if (!variations[activeVariation]) activeVariation = getDefaultVariationKey(activeFormation);
+  variationSelect.value = activeVariation;
+}
+
 function resetLivePositions() {
   livePositions = {};
   opponentPositions = {};
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     livePositions[item.id] = getPhasePoint(item, activePhase);
   });
   getOpponents().forEach((item) => {
@@ -324,7 +461,7 @@ function resetLivePositions() {
 }
 
 function applyPhaseToLivePositions() {
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     livePositions[item.id] = getPhasePoint(item, activePhase);
   });
   getOpponents().forEach((item) => {
@@ -439,7 +576,7 @@ function renderMowLines() {
 
 function renderPlayers() {
   playersGroup.innerHTML = "";
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     const position = livePositions[item.id] || { x: item.x, y: item.y };
     const group = svgEl("g", {
       class: `player${item.id === selectedId ? " selected" : ""}${ballOwner?.team === "home" && ballOwner.id === item.id ? " ball-owner" : ""}`,
@@ -537,7 +674,7 @@ function renderDrawings() {
 }
 
 function renderPanel() {
-  const formation = formations[activeFormation];
+  const formation = getFormation();
   const phaseLabel = formation.phases[activePhase];
   const situation = getSituations()[activeSituation];
   if (activeTab === "overview") {
@@ -761,7 +898,7 @@ function findPassBlocker(start, end, passerTeam) {
   if (!passerTeam) return null;
   const defendingTeam = passerTeam === "home" ? "opponent" : "home";
   const candidates = defendingTeam === "home"
-    ? formations[activeFormation].players.map((item) => ({ team: "home", id: item.id, ...livePositions[item.id] }))
+    ? getFormation().players.map((item) => ({ team: "home", id: item.id, ...livePositions[item.id] }))
     : getOpponents().map((item) => ({ team: "opponent", id: item.id, ...opponentPositions[item.id] }));
   return candidates
     .map((candidate) => ({
@@ -886,7 +1023,7 @@ function onPointerUp(event) {
 }
 
 function getAllMarkers() {
-  const home = formations[activeFormation].players.map((item) => ({
+  const home = getFormation().players.map((item) => ({
     team: "home",
     id: item.id,
     label: item.id,
@@ -980,7 +1117,7 @@ function applyOffBallLocalInfluence(state) {
   const opponentTargets = {};
   const radius = 18;
 
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     const point = livePositions[item.id];
     if (!point) return;
     homeTargets[item.id] = getLocalInfluenceTarget(point, marker, dx, dy, radius, state.team === "home" && item.id === state.id);
@@ -1077,7 +1214,7 @@ function classifyMovement(state, marker, dx, dy) {
 }
 
 function getTeamItems(team) {
-  return team === "home" ? formations[activeFormation].players : getOpponents();
+  return team === "home" ? getFormation().players : getOpponents();
 }
 
 function getMarkerItem(team, id) {
@@ -1151,7 +1288,7 @@ function animateAllMarkersToCurrentShape(anchor = null) {
   const ends = {};
   const opponentStarts = {};
   const opponentEnds = {};
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     starts[item.id] = { ...livePositions[item.id] };
     ends[item.id] = getPhasePoint(item, activePhase);
   });
@@ -1167,7 +1304,7 @@ function animateAllMarkersToCurrentShape(anchor = null) {
 function animateMarkersToTargets(homeTargets, opponentTargets, homeStarts = null, opponentStarts = null) {
   const starts = homeStarts || {};
   const opponentStartsResolved = opponentStarts || {};
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     if (!starts[item.id]) starts[item.id] = { ...livePositions[item.id] };
     if (!homeTargets[item.id]) homeTargets[item.id] = { ...livePositions[item.id] };
   });
@@ -1229,7 +1366,7 @@ function animateToPhase(phase, done) {
   const ends = {};
   const opponentStarts = {};
   const opponentEnds = {};
-  formations[activeFormation].players.forEach((item) => {
+  getFormation().players.forEach((item) => {
     starts[item.id] = { ...livePositions[item.id] };
     ends[item.id] = getPhasePoint(item, phase);
   });
@@ -1689,12 +1826,12 @@ function makeCurve(from, to, bend) {
 }
 
 function getSelectedPlayer() {
-  return formations[activeFormation].players.find((item) => item.id === selectedId);
+  return getFormation().players.find((item) => item.id === selectedId);
 }
 
 function nearestPlayers(id, count) {
   const source = livePositions[id];
-  return formations[activeFormation].players
+  return getFormation().players
     .filter((item) => item.id !== id)
     .map((item) => ({
       ...item,
