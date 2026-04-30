@@ -1,0 +1,631 @@
+:root {
+  color-scheme: dark;
+  --bg: #173f2a;
+  --panel: #173424;
+  --panel-2: #1f4a32;
+  --line: rgba(255, 255, 255, 0.14);
+  --muted: #9ba7a8;
+  --text: #f2f5f1;
+  --accent: #e2c044;
+  --accent-2: #4db6ac;
+  --danger: #e06f5f;
+  --pitch: #2f7d4f;
+  --pitch-light: #3a8d5c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, #194f32 0%, #23643f 44%, #143d28 100%);
+  color: var(--text);
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topbar {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(18, 52, 35, 0.88);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 230px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #151411;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 19px;
+  line-height: 1.05;
+}
+
+.brand p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+select,
+button,
+input[type="range"] {
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+select {
+  min-width: 150px;
+  padding: 0 34px 0 10px;
+}
+
+input[type="range"] {
+  width: 130px;
+  padding: 0;
+  accent-color: var(--accent);
+}
+
+button {
+  padding: 0 13px;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+button:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: #2a3135;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button.active {
+  background: var(--accent);
+  color: #151411;
+  border-color: var(--accent);
+}
+
+.workspace {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(250px, 300px) minmax(460px, 1fr) minmax(250px, 310px);
+  align-items: start;
+  gap: 14px;
+}
+
+.lesson-panel,
+.role-panel {
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(18, 52, 35, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 10px;
+  background: rgba(18, 52, 35, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  height: 34px;
+  padding: 0 8px;
+}
+
+.panel-content,
+.role-panel {
+  padding: 16px;
+}
+
+.panel-section + .panel-section {
+  margin-top: 18px;
+}
+
+.eyebrow {
+  color: var(--accent-2);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h2 {
+  margin-top: 5px;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.body-copy {
+  margin-top: 10px;
+  color: #c9d0ce;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.pill {
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #dce4df;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+}
+
+.note-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note-list li {
+  padding-left: 14px;
+  position: relative;
+  color: #c9d0ce;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.note-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.64em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.pitch-wrap {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: start;
+  gap: 10px;
+}
+
+#pitch {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 100 / 68;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: var(--pitch);
+  box-shadow: var(--shadow);
+  touch-action: none;
+}
+
+.grass {
+  fill: var(--pitch);
+}
+
+.mow-lines rect {
+  fill: var(--pitch);
+}
+
+.mow-lines rect:nth-child(odd) {
+  fill: var(--pitch-light);
+  opacity: 0.34;
+}
+
+.pitch-lines {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.74);
+  stroke-width: 0.34;
+}
+
+.goals {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: rgba(255, 255, 255, 0.78);
+  stroke-width: 0.28;
+}
+
+.zone {
+  fill: rgba(226, 192, 68, 0.18);
+  stroke: none;
+}
+
+.connection {
+  fill: none;
+  stroke: rgba(77, 182, 172, 0.66);
+  stroke-width: 0.42;
+  stroke-dasharray: 1.2 1;
+}
+
+.opponent-link {
+  fill: none;
+  stroke: rgba(224, 111, 95, 0.74);
+  stroke-width: 0.48;
+  stroke-dasharray: 0.9 0.9;
+}
+
+.tactical-arrow {
+  fill: none;
+  stroke: rgba(242, 245, 241, 0.8);
+  stroke-width: 0.55;
+  marker-end: url(#arrowHead);
+}
+
+.tactical-arrow.attack {
+  stroke: #f5d95c;
+}
+
+.tactical-arrow.defense {
+  stroke: #8fd5c9;
+}
+
+.tactical-arrow.transition {
+  stroke: #f08f7f;
+}
+
+.drawing {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.65;
+  marker-end: url(#arrowHead);
+}
+
+.pass-aim {
+  fill: none;
+  stroke: #fff7c4;
+  stroke-width: 0.55;
+  stroke-dasharray: 1 0.7;
+  marker-end: url(#arrowHead);
+}
+
+.pass-target {
+  fill: rgba(255, 247, 196, 0.52);
+  stroke: #fff7c4;
+  stroke-width: 0.22;
+}
+
+.player {
+  cursor: grab;
+}
+
+.player.dragging,
+.opponent.dragging,
+.ball.dragging {
+  cursor: grabbing;
+}
+
+.opponent,
+.ball {
+  cursor: grab;
+}
+
+.player-ring {
+  display: none;
+}
+
+.player-disc {
+  fill: rgba(139, 216, 255, 0.72);
+  stroke: none;
+}
+
+.player.selected .player-disc {
+  fill: var(--accent);
+  opacity: 1;
+}
+
+.player.ball-owner .player-disc,
+.opponent.ball-owner .opponent-disc {
+  filter: drop-shadow(0 0 0.28rem rgba(255, 159, 28, 0.92));
+}
+
+.pass-cap {
+  fill: rgba(255, 159, 28, 0.82);
+  stroke: none;
+  cursor: crosshair;
+}
+
+.player-label {
+  fill: #0d1f24;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.player-name {
+  fill: rgba(255, 255, 255, 0.9);
+  font-size: 2px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.opponent-disc {
+  fill: rgba(255, 143, 132, 0.68);
+  stroke: none;
+}
+
+.opponent.involved .opponent-disc {
+  fill: rgba(255, 143, 132, 0.78);
+}
+
+.opponent-label {
+  fill: #30110f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.opponent-name {
+  fill: rgba(255, 255, 255, 0.86);
+  font-size: 1.85px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.ball-shadow {
+  fill: rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+.ball-disc {
+  fill: #ff9f1c;
+  stroke: #111915;
+  stroke-width: 0.18;
+}
+
+.ball-seam {
+  fill: none;
+  stroke: #111915;
+  stroke-width: 0.16;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.ball.attached .ball-disc {
+  fill: #ff9f1c;
+}
+
+.hint-bar {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(18, 52, 35, 0.9);
+}
+
+.hint-bar span {
+  color: #d6ddd9;
+  font-size: 13px;
+}
+
+.hint-bar span + span::before {
+  content: "/";
+  margin-right: 8px;
+  color: var(--muted);
+}
+
+.shift-toggle {
+  display: inline-flex;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  color: #f2f5f1;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.shift-toggle::before {
+  content: "/";
+  margin-right: 2px;
+  color: var(--muted);
+}
+
+.shift-toggle input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+}
+
+.role-empty {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.45;
+}
+
+.role-card {
+  display: grid;
+  gap: 16px;
+}
+
+.role-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.role-badge {
+  min-width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #151411;
+  font-weight: 900;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.metric {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.metric strong {
+  display: block;
+  font-size: 18px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.move-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.move-option {
+  height: auto;
+  min-height: 42px;
+  padding: 9px 10px;
+  text-align: left;
+}
+
+@media (max-width: 1120px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .pitch-wrap {
+    order: -1;
+  }
+
+  .lesson-panel,
+  .role-panel {
+    max-height: none;
+  }
+
+  #pitch {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 10px;
+  }
+
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .controls {
+    justify-content: stretch;
+  }
+
+  .controls label,
+  .controls button,
+  .controls select {
+    width: 100%;
+  }
+
+  #pitch {
+    min-height: 0;
+  }
+}

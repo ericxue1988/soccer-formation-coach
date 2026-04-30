@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formation Coach</title>
+    <link rel="stylesheet" href="styles.css?v=20260429-10" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">FC</span>
+          <div>
+            <h1>Formation Coach</h1>
+            <p>Interactive soccer tactics board</p>
+          </div>
+        </div>
+        <div class="controls">
+          <label>
+            Formation
+            <select id="formationSelect"></select>
+          </label>
+          <label>
+            Phase
+            <select id="phaseSelect"></select>
+          </label>
+          <label>
+            Situation
+            <select id="situationSelect"></select>
+          </label>
+          <button id="playBtn" type="button" title="Animate formation evolution">Play</button>
+          <button id="resetBtn" type="button" title="Reset player positions">Reset</button>
+          <button id="drawBtn" type="button" title="Draw tactical arrows">Draw</button>
+          <button id="clearBtn" type="button" title="Clear drawings">Clear</button>
+          <label>
+            Compactness
+            <input id="compactnessRange" type="range" min="0" max="100" value="62" />
+          </label>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="lesson-panel">
+          <nav class="tabs" aria-label="Coaching tabs">
+            <button class="tab active" data-tab="overview" type="button">Overview</button>
+            <button class="tab" data-tab="details" type="button">Details</button>
+            <button class="tab" data-tab="drills" type="button">Drills</button>
+          </nav>
+          <div id="panelContent" class="panel-content"></div>
+        </aside>
+
+        <section class="pitch-wrap" aria-label="Interactive pitch">
+          <svg id="pitch" viewBox="0 0 100 68" role="img" aria-label="Soccer tactics board">
+            <defs>
+              <marker id="arrowHead" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto">
+                <path d="M0,0 L4,2 L0,4 Z" fill="currentColor"></path>
+              </marker>
+            </defs>
+            <rect class="grass" x="0" y="0" width="100" height="68"></rect>
+            <g class="mow-lines"></g>
+            <g class="pitch-lines">
+              <rect x="3" y="3" width="94" height="62"></rect>
+              <line x1="50" y1="3" x2="50" y2="65"></line>
+              <circle cx="50" cy="34" r="8.8"></circle>
+              <circle cx="50" cy="34" r="0.45"></circle>
+              <rect x="3" y="18" width="16" height="32"></rect>
+              <rect x="3" y="25" width="6" height="18"></rect>
+              <circle cx="14" cy="34" r="0.45"></circle>
+              <rect x="81" y="18" width="16" height="32"></rect>
+              <rect x="91" y="25" width="6" height="18"></rect>
+              <circle cx="86" cy="34" r="0.45"></circle>
+            </g>
+            <g class="goals">
+              <rect x="0.4" y="27" width="2.6" height="14"></rect>
+              <line x1="0.4" y1="30.5" x2="3" y2="30.5"></line>
+              <line x1="0.4" y1="34" x2="3" y2="34"></line>
+              <line x1="0.4" y1="37.5" x2="3" y2="37.5"></line>
+              <rect x="97" y="27" width="2.6" height="14"></rect>
+              <line x1="97" y1="30.5" x2="99.6" y2="30.5"></line>
+              <line x1="97" y1="34" x2="99.6" y2="34"></line>
+              <line x1="97" y1="37.5" x2="99.6" y2="37.5"></line>
+            </g>
+            <g id="zones"></g>
+            <g id="tacticalLayer"></g>
+            <g id="opponents"></g>
+            <g id="connections"></g>
+            <g id="drawings"></g>
+            <g id="passLayer"></g>
+            <g id="ballLayer"></g>
+            <g id="players"></g>
+          </svg>
+          <div class="hint-bar">
+            <span>Drag players</span>
+            <span>Drag ball</span>
+            <span>Click ball carrier cap to pass</span>
+            <span>Click a role</span>
+            <span>Use Draw for arrows</span>
+            <label class="shift-toggle">
+              <input id="autoShiftToggle" type="checkbox" checked />
+              Auto shift
+            </label>
+            <label class="shift-toggle">
+              <input id="guideLinesToggle" type="checkbox" checked />
+              Guide lines
+            </label>
+          </div>
+        </section>
+
+        <aside class="role-panel">
+          <div id="roleContent"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js?v=20260429-10"></script>
+  </body>
+</html>
